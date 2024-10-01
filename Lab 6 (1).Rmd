@@ -1,0 +1,127 @@
+---
+title: "Lab 6"
+author: "Quinn S | Issac G"
+date: "2023-03-17"
+output: html_document
+---
+
+
+## Exercise 2
+
+[Exponential distribution]
+```{r}
+means <- numeric() # initialize the numerical vector
+m <- 1000 # number of means to be generated
+n <- 10 # number of iid random variables to be generated
+
+for(i in 1:m){
+   samp <- rexp(n,2)
+   means[i] <- mean(samp)
+}
+
+a <- mean(means); a
+print(1/2)
+s <- sd(means); s
+print(sqrt((1/(2^2))/(10)))
+
+hist(means, freq=FALSE) 
+y <- seq(a-3*s, a+3*s, 0.001) # using the 68-95-99.7 rule here
+lines(y, dnorm(y,a,s), col="blue")
+```
+
+```{r}
+n <- 50 # number of iid random variables to be generated
+
+for(i in 1:m){
+   samp <- rexp(n,2)
+   means[i] <- mean(samp)
+}
+
+a <- mean(means); a
+print(1/2)
+s <- sd(means); s
+print(sqrt((1/(2^2))/(50)))
+
+hist(means, freq=FALSE) 
+y <- seq(a-3*s, a+3*s, 0.001) # using the 68-95-99.7 rule here
+lines(y, dnorm(y,a,s), col="blue")
+```
+
+```{r}
+n <- 500 # number of iid random variables to be generated
+
+for(i in 1:m){
+   samp <- rexp(n,2)
+   means[i] <- mean(samp)
+}
+
+a <- mean(means); a
+print(1/2)
+s <- sd(means); s
+print(sqrt((1/(2^2))/(500)))
+
+hist(means, freq=FALSE) 
+y <- seq(a-3*s, a+3*s, 0.001) # using the 68-95-99.7 rule here
+lines(y, dnorm(y,a,s), col="blue")
+```
+
+For each of the graphs the distribution matches the normal density curve.
+
+[Uniform Distribution]
+```{r}
+means <- numeric() # initialize the numerical vector
+m <- 1000 # number of means to be generated
+n <- 10 # number of iid random variables to be generated
+
+for(i in 1:m){
+   samp <- runif(n, 0, 1)
+   means[i] <- mean(samp)
+}
+
+a <- mean(means); a
+print(1/2)
+s <- sd(means); s
+print(sqrt((1/(12))/(10)))
+
+hist(means, freq=FALSE) 
+y <- seq(a-3*s, a+3*s, 0.001) # using the 68-95-99.7 rule here
+lines(y, dnorm(y,a,s), col="blue")
+```
+
+```{r}
+n <- 50 # number of iid random variables to be generated
+
+for(i in 1:m){
+   samp <- runif(n, 0, 1)
+   means[i] <- mean(samp)
+}
+
+a <- mean(means); a
+print(1/2)
+s <- sd(means); s
+print(sqrt((1/(12))/(50)))
+
+hist(means, freq=FALSE) 
+y <- seq(a-3*s, a+3*s, 0.001) # using the 68-95-99.7 rule here
+lines(y, dnorm(y,a,s), col="blue")
+```
+
+```{r}
+n <- 500 # number of iid random variables to be generated
+
+for(i in 1:m){
+   samp <- runif(n, 0, 1)
+   means[i] <- mean(samp)
+}
+
+a <- mean(means); a
+print(1/2)
+s <- sd(means); s
+print(sqrt((1/(12))/(500)))
+
+hist(means, freq=FALSE) 
+y <- seq(a-3*s, a+3*s, 0.001) # using the 68-95-99.7 rule here
+lines(y, dnorm(y,a,s), col="blue")
+```
+
+For each of the graphs the distribution matches the normal density curve.
