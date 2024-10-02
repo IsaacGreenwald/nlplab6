@@ -93,7 +93,7 @@ class HMMTagger():
         """
         given a vector words and tags gets the index of the words and tags and then fills 
         in the 2D matrix of tag_word and tag_tag with counts of how many times that word
-        and tag pair show up in the touple of (words, tags)
+        and tag pair show up in the tuple of (words, tags)
         """
         prev_tag = self.tag_to_index("<<START>>")
         for word, tag in zip(words, tags):
@@ -133,7 +133,7 @@ class HMMTagger():
         """
         # Build DP table, which should be |sent| x |tags|
         cost_table = zeros((len(tokens), len(self.tags)), float32)
-        bt_table   = zeros((len(tokens), len(self.tags)), int)
+        bt_table = zeros((len(tokens), len(self.tags)), int)
 
         for token_i, token in enumerate(tokens):
             token_costs = self.get_token_costs(token)
@@ -142,7 +142,7 @@ class HMMTagger():
                 bt_table[token_i, :] = -1
             else:
                 costs = self.tag_tag_probs.copy()
-                # TODO: Fill in the actual costs matrix to compute
+                # Fill in the actual costs matrix to compute
                 # the sum of the log probability from the last state,
                 # the transition log probability,
                 # and the emission log probability

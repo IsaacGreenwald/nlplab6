@@ -21,7 +21,7 @@ universal_to_ptb = {'SYM': ('#', '$', 'SYM'),
 
 universal_tag_set = list(universal_to_ptb.keys())
 
-# TODO your code here to create ptb_to_universal
+# create ptb_to_universal
 """
 This dictionary will have a key for each PTB tag, whose value will be the corresponding Universal tag. 
 Values in this dictionary should just be strings, not lists of strings. 
@@ -58,7 +58,7 @@ def parse_file(fp, separator="===+", do_universal=False):
             continue
         words, tags = list(zip(*words))
         tags = [t.split("|")[0] for t in tags]
-        # TODO your code here: if do_universal: ...
+        
         # Using this dictionary, modify the parse_file function to convert tags from PTB tags to Universal tags 
         if do_universal is True:
             tags = [ptb_to_universal[tag] for tag in tags]
