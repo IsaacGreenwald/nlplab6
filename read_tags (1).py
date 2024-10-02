@@ -58,7 +58,7 @@ def parse_file(fp, separator="===+", do_universal=False):
             continue
         words, tags = list(zip(*words))
         tags = [t.split("|")[0] for t in tags]
-        
+
         # Using this dictionary, modify the parse_file function to convert tags from PTB tags to Universal tags 
         if do_universal is True:
             tags = [ptb_to_universal[tag] for tag in tags]
